@@ -4,25 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <title>LJDR Chessboard Demo</title>
+  <!-- estilos base -->
+  <link rel="stylesheet" href="/src/assets/ljdr.base.css" />
+  <link rel="stylesheet" href="/src/assets/ljdr.blue.css" />
+  <link rel="stylesheet" href="/src/assets/ljdr.cburnett.css" />
   <style>
-    ljdr-wrap {
-      display: block;
-      width: 400px;
-      height: 400px;
-      border: 1px solid black;
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    ljdr-container {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    ljdr-board {
-      display: block;
-      width: 100%;
-      height: 100%;
-      background: #eee;
+    #app {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   </style>
 </head>
@@ -32,12 +31,15 @@
   <div id="app"></div>
 
   <script type="module">
-    import { renderWrap } from "/src/wrap.ts";
+    import { createChessBoard } from "/src/index.ts";
 
-    const app = document.getElementById("app");
-    const { board, container, wrap } = renderWrap(app);
+    const chessboard = createChessBoard({
+      id: "board1",
+      squareSize: 60,
+      coordinates: true,
+    });
 
-    console.log("Elements creados:", board, container, wrap);
+    chessboard.wrap(document.getElementById("app"));
   </script>
 </body>
 

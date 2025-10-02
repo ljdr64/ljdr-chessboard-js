@@ -1,0 +1,145 @@
+.ljdr-wrap {
+  box-sizing: content-box;
+  position: relative;
+  display: block;
+}
+
+.ljdr-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 0;
+}
+
+.ljdr-board {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  line-height: 0;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.ljdr-square,
+.ljdr-piece,
+.ljdr-ghost,
+.ljdr-ghost-animate1,
+.ljdr-ghost-animate2,
+.ljdr-ghost-animate3,
+.ljdr-warp-animate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12.5%;
+  height: 12.5%;
+  background-size: cover;
+}
+
+.ljdr-piece {
+  pointer-events: none;
+  will-change: transform;
+  z-index: 10;
+}
+
+.ljdr-ghost {
+  opacity: 0.3;
+}
+
+.ljdr-check,
+.ljdr-ghost,
+.select,
+.animate,
+.ghost-animate1,
+.ghost-animate2,
+.ghost-animate3,
+.warp-animate {
+  pointer-events: none;
+}
+
+.move-dest {
+  pointer-events: auto;
+}
+
+.animate {
+  z-index: 16;
+}
+
+.ghost-animate1 {
+  z-index: 15;
+}
+.ghost-animate2 {
+  z-index: 14;
+}
+.ghost-animate3 {
+  z-index: 13;
+}
+.warp-animate {
+  z-index: 12;
+}
+
+.fade {
+  opacity: 0.5;
+}
+
+.drag {
+  cursor: move;
+  z-index: 22 !important;
+}
+
+.ljdr-wrap .coords {
+  position: absolute;
+  display: flex;
+  pointer-events: none;
+  opacity: 0.8;
+  font-family: sans-serif;
+  font-size: 9px;
+}
+
+.ljdr-wrap .coords.ranks {
+  left: 0.8%;
+  top: -4.1%;
+  flex-flow: column-reverse;
+  height: 100%;
+  width: 12px;
+}
+
+.ljdr-wrap .coords.ranks.black {
+  flex-flow: column;
+}
+
+.ljdr-wrap .coords.ranks.left {
+  left: -2%;
+  align-items: flex-end;
+}
+
+.ljdr-wrap .coords.files {
+  bottom: -0.8%;
+  left: 5%;
+  flex-flow: row;
+  width: 100%;
+  height: 16px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ljdr-wrap .coords.files.black {
+  flex-flow: row-reverse;
+}
+
+.ljdr-wrap .coords .coord {
+  flex: 1 1 auto;
+}
+
+.ljdr-wrap .coords.ranks .coord {
+  transform: translateY(39%);
+}
